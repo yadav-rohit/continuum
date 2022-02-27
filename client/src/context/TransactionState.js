@@ -79,26 +79,28 @@ const TransactionState = (props) => {
   
   const reloadEffect = () => shouldReload(!reload);
 
-  const setAccountListener = (provider) => {
-    provider.on("accountsChanged", (accounts) => setCurrentAccount(accounts[0]));
+  const setAccountListener = async (provider) => {
+    const wait = await provider.on("accountsChanged", (accounts) => setCurrentAccount(accounts[0]));
     console.log(currentAccount);
   };
-  const connectWallet = () => {
-    const loadProvider = async () => {
-      const provider = await detectEthereumProvider();
-      // const contract = await loadContract("Funder", provider);
-      if (provider) {
-        setAccountListener(provider);
-        provider.request({ method: "eth_requestAccounts" });
-        setWeb3Api({
-          web3: new Web3(provider),
-          provider,
-          // contract,
-        });
-      } else {
-        console.error("Please install MetaMask!");
-      }
-    }};
+ 
+     
+  const connectWallet = async () => {
+    const provider = await detectEthereumProvider();
+    // const contract = await loadContract("Funder", provider);
+    if (provider) {
+      setAccountListener(provider);
+      provider.request({ method: "eth_requestAccounts" });
+      setWeb3Api({
+        web3: new Web3(provider),
+        provider,
+        // contract,
+      });
+    } else {
+      console.error("Please install MetaMask!");
+    }
+}
+
 
 //? transfer funds
 const transferFund = async () => {
@@ -117,8 +119,15 @@ const transferFund = async () => {
   useEffect(() => {
     fetchdonations();
     fetchCauses();
-    console.log(currentAccount)
   }, []);
+
+  useEffect(() => {
+    const getAccount = async () => {
+      const accounts = await web3Api.web3.eth.getAccounts();
+      setCurrentAccount(accounts[0]);
+    };
+    web3Api.web3 && getAccount();
+  }, [web3Api.web3]); 
 
   return (
     <transactionContext.Provider
