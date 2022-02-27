@@ -3,16 +3,15 @@ import transactionContext from "./transactionCntxt";
 import Web3 from 'web3'
 import detectEthereumProvider from "@metamask/detect-provider";
 import { abi } from "../abi";
+import Web3Modal from 'web3modal'
+import { ethers } from 'ethers'
+
+// const provider =  detectEthereumProvider();
 
 
+const ContractAddress = "0xd134e011fcb46e5e2c4204cc6d24c85b02f25058";
 
-const ContractAddress = "0x71714bAcfDc83A93A96f5113A705E8a934CC161e";
 
-const ContractInstance = new Web3.eth.Contract(
-  abi,
-  ContractAddress
-);
-const provider = await detectEthereumProvider();
 
 
 
@@ -29,24 +28,96 @@ const TransactionState = (props) => {
   const [reload, shouldReload] = useState(false);
   const [DNAmount, setDNamount] = useState(false);
 
-  // const [web3Api, setWeb3Api] = useState({
-  //   provider: null,
-  //   web3: null,
-  //   contract: null,
-  // });
+  
 
-  const web3 = new Web3(provider);
+
+  const [web3Api, setWeb3Api] = useState({
+    provider: null,
+    web3: null,
+  });
+
+  useEffect(() => {
+    const loadProvider = async () => {
+      const provider = await detectEthereumProvider();
+      if (provider) {
+        setAccountListener(provider);
+        provider.request({ method: "eth_requestAccounts" });
+        setWeb3Api({
+          provider,
+          web3: new Web3(provider),
+        });
+      } else {
+        console.error("Please install MetaMask!");
+      }
+    };
+    loadProvider();
+  }, []);
+
+  const setAccountListener = async (provider) => {
+    const wait = await provider.on("accountsChanged", (accounts) => setCurrentAccount(accounts[0]));
+    console.log(currentAccount);
+    
+  };
+
+ 
+const web3 = new Web3(web3Api.provider); 
+
+  const ContractInstance = new web3.eth.Contract(
+    abi,
+    ContractAddress,
+  );
+
 
   //?
+  
 
-  const pay = async() => {
-     await ContractInstance.getFunds({
-       from: currentAccount,
-       value: web3.utils.toWei({DNAmount},"ether"),
-       
-     });
-
+  const Payout = async () => {
+    const web3Modal = new Web3Modal({
+      network: "mainnet",
+      cacheProvider: true,
+    })
+    
+    const connection = await web3Modal.connect()
+    const provider = new ethers.providers.Web3Provider(connection)
+    const signer = provider.getSigner()
+    const timelock = new ethers.Contract(ContractAddress, abi, signer);
+    const overrides = {
+      value: ethers.utils.parseEther(`${DNAmount}`)
+    }
+    const Pay = await timelock.getFunds(overrides)
+   
+      reloadEffect();
   } 
+
+  //?  Widhdraw funstion
+  const Widdraw = async () => {
+    const web3Modal = new Web3Modal({
+      network: "mainnet",
+      cacheProvider: true,
+    })
+    const connection = await web3Modal.connect()
+    const provider = new ethers.providers.Web3Provider(connection)
+    const signer = provider.getSigner()
+    const timelock = new ethers.Contract(ContractAddress, abi, signer);
+    const Pay = await timelock.withdraw()
+   
+      reloadEffect();
+  } 
+
+  //?time function
+  const Timer = async () => {
+    const web3Modal = new Web3Modal({
+      network: "mainnet",
+      cacheProvider: true,
+    })
+    const connection = await web3Modal.connect()
+    const provider = new ethers.providers.Web3Provider(connection)
+    const signer = provider.getSigner()
+    const timelock = new ethers.Contract(ContractAddress, abi, signer);
+    const Pay = await timelock.timeLeft()
+      reloadEffect();
+  } 
+
 
 
 
@@ -102,34 +173,14 @@ const TransactionState = (props) => {
   
   const reloadEffect = () => shouldReload(!reload);
 
-  const setAccountListener = async (provider) => {
-    const wait = await provider.on("accountsChanged", (accounts) => setCurrentAccount(accounts[0]));
-    console.log(currentAccount);
-  };
+ 
  
      
-  const connectWallet = async () => {
-    const provider = await detectEthereumProvider();
-    // const contract = await loadContract("Funder", provider);
-    if (provider) {
-      setAccountListener(provider);
-      provider.request({ method: "eth_requestAccounts" });
-     
-    } else {
-      console.error("Please install MetaMask!");
-    }
-}
 
-
-
-
-
-  // const disconnectWallet = () => {
-  //   setCurrentAccount(null);
-  // };
   useEffect(() => {
     fetchdonations();
     fetchCauses();
+
   }, []);
 
   
@@ -137,11 +188,11 @@ const TransactionState = (props) => {
   return (
     <transactionContext.Provider
       value={{
-        connectWallet,
+        Timer,
         currentAccount,
         payableContractHash,
         setpayableContractHash,
-        // disconnectWallet,
+        Widdraw,
         causes,
         fetchCauses,
         donations,
@@ -151,7 +202,7 @@ const TransactionState = (props) => {
          Addtransaction ,
          payableContract, setpayableContract ,
          setDNamount,
-         pay,
+         Payout,
       }}
     >
       {props.children}

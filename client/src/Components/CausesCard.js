@@ -67,27 +67,7 @@ else{
 }
    }
     return (<>     
-    {/* ? no database cause    */}
-    <div className={`topdonnorview ${largeview} ${style.causeViewer}`}>
-        <div className={style.causeViewerheader}>
-            <div className={style.causeViewerTitle}>HELP SAVE NAB</div>
-            <div className='text-xl antialiased shadow-2xl'>
-            <AiFillCloseCircle onClick={viewmore}/>
-            </div>
-        </div>
-        <div className={style.causeViewerImage}>
-            <img className={style.causeimage} src='https://cimages.milaap.org/milaap/image/upload/c_fill,g_faces,h_452,w_603/v1590571972/production/images/campaign/177706/NAB2_hrkxtp_1590572167.jpg' alt="Image" />
-        </div>
-        <div className={style.causeViewerDescription}>
-        National Association for the Blind (NAB) Delhi, a National Award-winning NGO, currently supports 250 school going blind children,  orphans, 80 deaf-blind children, 125 caregivers, teachers and staff, and thousands of persons with vision disabilities via a helpline and remote support for universities, schools, and libraries. Due to the COVID-19 crisis, the NAB does not have the funds to continue its activities and may have to close, putting all these lives at risk
-        </div>
-        <div className={style.DonateButton}>
-            <div className={style.DonateButtontext} onClick={DonateIt}>
-            Donate
-            </div>
-        </div>
-    </div>
-
+    
     {/* ?causeViewer */}
         <div className={`topdonnorview ${largeview} ${style.causeViewer}`}>
         <div className={style.causeViewerheader}>
@@ -109,28 +89,6 @@ else{
         </div>
     </div>
     {/* end */}
-
-
-
-{/* no database cause */}
-<div className={style.wrapper}>
-    <div className={`cardview ${style.cardview}`}>
-        <div className={style.title}>HELP SAVE NAB</div>
-        <div className={style.imagebox}>
-
-        <img src={props.image} className='https://cimages.milaap.org/milaap/image/upload/c_fill,g_faces,h_452,w_603/v1590571972/production/images/campaign/177706/NAB2_hrkxtp_1590572167.jpg'/>
-        </div>
-        <div className={style.description}>
-        National Association for the Blind (NAB) Delhi, a National Award-winning NGO, currently supports 250 school going blind children,  orphans, 80 deaf-blind children, 125 caregivers, teachers and staff, and thousands of
-         persons with vision 
-        </div>
-        <div className={style.button} >
-            <div className={style.buttontext} onClick={viewmore} >
-            Know More
-            </div>
-        </div>
-        </div>
-        </div>
 
 
 {/* database cause */}

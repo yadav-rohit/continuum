@@ -15,23 +15,17 @@ const style = {
 
 }
 
-const Dpage =  () => {
+const Widraw =  () => {
   const context = useContext(transactionContext);
-  const {Addtransaction ,currentAccount, payableContract , payableContractHash , Payout , setDNamount} = context;
-  const [info , setinfo] = useState({Name: "" , Amount: ""});
-//! animation function
-  const onchange = async (e) =>{
-    e.preventDefault();
-    const set = await setinfo({...info , [e.target.name]:e.target.value});
-    setDNamount(info.Amount);
-    console.log(info);
-  }
+  const { Widdraw , Timer} = context;
 
   const onclickpay = async () =>{
-    // Addtransaction(info.Name , currentAccount , payableContractHash , payableContract , info.Amount)
-    // Addtransaction(info.Name , "44154413218646515145" , payableContractHash , payableContract , info.Amount)
-    setinfo({Name: "" , Amount: ""});
-    Payout();
+      if(Timer){
+    Widdraw();
+      }
+      else{
+          alert("Wait For contract to Unlock");
+      }
   }
 
   return (
@@ -45,19 +39,10 @@ const Dpage =  () => {
       <div className={`payArea ${style.payArea}`}>
         <div className={style.paymentsetails}>
           <div className={`paymentmenu ${style.paymentmenu}`}>
-            <div className={style.donatingTo}>
-            <span>Donating To : {payableContract}</span>
-            </div>
              <div className={style.paymentform}>
-               <div className={`inputs ${style.field}`}>
-                 <input onChange={onchange} type="text" placeholder='Name' name='Name'/>
-               </div>
-               <div className={`inputs ${style.field}`} >
-                 <input onChange={onchange} type="number" placeholder='Amount' name='Amount'/>
-               </div>
                <div className={`paymentbutton ${style.paymentbutton}`}>
                  <div className={style.paymentbuttontext} onClick={onclickpay}>
-                Pay {info.Amount}
+                With Draw
                 </div>
                </div>
              </div>
@@ -68,4 +53,4 @@ const Dpage =  () => {
   )
 }
 
-export default Dpage
+export default Widraw

@@ -9,6 +9,7 @@ import Dpage from './Components/Dpage';
 import Header from './Components/Header';
 import TransactionState from './context/TransactionState';
 import About from './Components/About';
+import WithDraw from './Components/Widraw';
 
 import Footer from './Components/Footer';
 
@@ -32,6 +33,7 @@ function App() {
       <Route exact path="/DonationPage" element={<Dpage/>} />
       <Route exact path="/Helper" element={<HelpsSection/>} />
       <Route exact path="/Contact" element={<Contact/>} />
+      <Route exact path="/WithDraw" element={<WithDraw/>} />
       </Routes>
       </BrowserRouter>
      <Footer/>

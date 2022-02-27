@@ -7,7 +7,7 @@ content: 'flex  flex-col md:flex-row my-4 md:my-0 justify-between items-center '
 partbutton: 'my-11 p-0.5 rounded-full w-fit cursor-pointer',
     partbuttontext: 'flex items-center justify-center p-3 hover:font-medium px-7 rounded-full  bg-[#000000] font-light',
     mainsection: 'flex flex-col justify-center  mx-20 w-5/5 md:w-3/5',
-    mainmessage: 'flex  flex-col justify-center text-4xl',
+    mainmessage: 'flex  flex-col justify-center text-7xl',
     recentsection: 'flex flex-col justify-center items-center w-5/5 md:w-2/5 ',
     recentsectioncontent: 'flex  p-0.5 w-[80%] h-[80%] items-center rounded-xl  justify-center  ',
     recentviewArea: 'rounded-xl w-[100%] h-[100%] p-3 bg-[#000000] font-light shadow-xl'

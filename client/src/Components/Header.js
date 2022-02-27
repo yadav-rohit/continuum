@@ -40,9 +40,9 @@ function Header() {
   return (
     <div className={style.Navbar}>
         <div className={style.navlogo}>
-            Continuum
             {/* just kept logo for refrence */}
-             {/* <img  src={logo} alt="Logo" height={70} width={70} /> */}
+            <img  src='https://cdn.discordapp.com/attachments/927960928023101521/947390558144434196/Group_29.png' alt="Logo" height={70} width={70} />
+            {/* Continuum   */}
         </div>
         <div className={style.navlist}>
             <div className={style.navitems}>
