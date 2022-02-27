@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ? cause card */
+/* ?donation card */
+.cardview{
+	color: white;
+	padding: 8px;
+	background: linear-gradient(25deg, rgba(253,168,81,1) 0%, rgb(255, 64, 77,1) 32%, rgba(97,105,160,1) 81%, rgba(21, 139, 198, 1) 90%, rgba(0, 213, 255, 1) 100%);
+	background-size: 200% 200%;
+  }
+  
+
+
 
 /* ?Css For animation in button*/
 .bganimation {
