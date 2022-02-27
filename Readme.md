@@ -24,11 +24,11 @@
 ### Built With
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
+<p align="left">
 * [Tailwind.css](https://tailwindcss.com/)
 * [React.js](https://reactjs.org/)
 * [Solidity](https://docs.soliditylang.org/en/v0.8.12/)
-
+  </p>
 
 
 
@@ -72,6 +72,6 @@ Rohit - [@yadav_rohit_26](https://twitter.com/yadav_rohit_26) - email@example.co
 
 Project Link: [https://github.com/yadav-rohit/continuum.git](https://github.com/yadav-rohit/continuum.git)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 
