@@ -69,7 +69,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Rohit - [@yadav_rohit_26](https://twitter.com/yadav_rohit_26) - email@example.com
+Rohit - [@yadav_rohit_26](https://twitter.com/yadav_rohit_26) 
+<!--   - email@example.com -->
 
 Project Link: [https://github.com/yadav-rohit/continuum.git](https://github.com/yadav-rohit/continuum.git)
 
