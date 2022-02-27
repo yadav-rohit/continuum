@@ -5,10 +5,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="left">
+  <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="https://cdn.discordapp.com/attachments/927960928023101521/947390558144434196/Group_29.png" alt="Logo" width="80" height="80">
   </a>
-
+  </div>
   <h3 align="center">Continuum</h3>
   
   <p align="center">
