@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import './App.css';
 import './Form.css';
 import Main from './Components/Main'
@@ -6,14 +6,15 @@ import Contact from './Components/ContactUs'
 import HelpsSection from './Components/HelpsSection';
 import Header from './Components/Header';
 import TransactionState from './context/TransactionState';
+import About from './Components/About';
 
 import Footer from './Components/Footer';
 
 
 import {
-  BrowserRouter,
-  Routes,
-  Route
+    BrowserRouter,
+    Routes,
+    Route
 } from "react-router-dom";
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
       <Header/>
       <Routes>  
       <Route exact path="/" element={<Main/>} />
-      {/* <Route exact path="/About" element={<About/>} /> */}
+      <Route exact path="/About" element={<About/>} />
       {/* <Route exact path="/DonationPage" element={<Dpage/>} /> */}
       <Route exact path="/Helper" element={<HelpsSection/>} />
       <Route exact path="/Contact" element={<Contact/>} />
@@ -35,6 +36,7 @@ function App() {
     </div>
     </TransactionState>
   );
+
 }
 
 export default App;
