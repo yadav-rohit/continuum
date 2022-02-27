@@ -1,8 +1,13 @@
 import React from 'react';
 import './App.css';
 import './Form.css';
+<<<<<<< Updated upstream
 import Main from './Components/Main'
+=======
+import About from './Components/About'
+>>>>>>> Stashed changes
 import Contact from './Components/ContactUs'
+import Team from './Components/Team'
 
 import Header from './Components/Header';
 import TransactionState from './context/TransactionState';
@@ -21,8 +26,13 @@ function App() {
             TransactionState >
             <
             div className = "flex flex-col md:min-h-screen  overflow-hidden  font-medium  bg-[#000000]" >
+<<<<<<< Updated upstream
 
             <
+=======
+            <
+            p > Hello < /p> <
+>>>>>>> Stashed changes
             BrowserRouter >
             <
             Header / >
@@ -31,6 +41,7 @@ function App() {
             <
             Route exact path = "/"
             element = { < Main / > }
+<<<<<<< Updated upstream
             /> <
             Route exact path = "/About"
             element = { < About / > }
@@ -38,6 +49,12 @@ function App() {
             element = { < Dpage / > }
             /> */
         } { /* <Route exact path="/Helper" element={<HelpsSection/>} /> */ } <
+=======
+            /> { / * < Route exact path = "/About"
+            element = { < About / > }
+            /> */
+        } { /* <Route exact path="/DonationPage" element={<Dpage/>} /> */ } { /* <Route exact path="/Helper" element={<HelpsSection/>} /> */ } <
+>>>>>>> Stashed changes
         Route exact path = "/Contact"
     element = { < Contact / > }
     /> < /
@@ -46,7 +63,11 @@ function App() {
     Footer / >
         <
         /div> < /
+<<<<<<< Updated upstream
         TransactionState >
+=======
+    TransactionState >
+>>>>>>> Stashed changes
 );
 }
 
