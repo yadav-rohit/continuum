@@ -4,7 +4,7 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<div align="center">
+<div align="left">
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="https://cdn.discordapp.com/attachments/927960928023101521/947390558144434196/Group_29.png" alt="Logo" width="80" height="80">
   </a>
@@ -24,11 +24,11 @@
 ### Built With
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-<p align="left">
+
 * [Tailwind.css](https://tailwindcss.com/)
 * [React.js](https://reactjs.org/)
 * [Solidity](https://docs.soliditylang.org/en/v0.8.12/)
-  </p>
+
 
 
 
