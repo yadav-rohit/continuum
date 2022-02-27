@@ -5,6 +5,7 @@ import './team.css';
 import Main from './Components/Main'
 import Contact from './Components/ContactUs'
 import HelpsSection from './Components/HelpsSection';
+import Dpage from './Components/Dpage';
 import Header from './Components/Header';
 import TransactionState from './context/TransactionState';
 import About from './Components/About';
@@ -28,7 +29,7 @@ function App() {
       <Routes>  
       <Route exact path="/" element={<Main/>} />
       <Route exact path="/About" element={<About/>} />
-      {/* <Route exact path="/DonationPage" element={<Dpage/>} /> */}
+      <Route exact path="/DonationPage" element={<Dpage/>} />
       <Route exact path="/Helper" element={<HelpsSection/>} />
       <Route exact path="/Contact" element={<Contact/>} />
       </Routes>

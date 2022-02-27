@@ -62,6 +62,79 @@
 }
 
 
+/* ?input code */
+.inputs{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	max-width: 400px;
+	/* margin: 0 auto; */
+	padding: 1.4rem 2rem 1.6rem;
+	background: rgba(57, 63, 84, 0.8);
+  }
+  .inputs:after{
+	content: "";
+	position: absolute;
+	left: 5%;
+	right: 5%;
+	bottom: 0px;
+	z-index: 999;
+	height: 2px;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	background-position: 0% 0%;
+	background: linear-gradient(
+	  to right,
+	  #b294ff,
+	  #57e6e6,
+	  #feffb8,
+	  #57e6e6,
+	  #b294ff,
+	  #57e6e6
+	);
+	background-size: 500% auto;
+	animation: gradient 3s linear infinite;
+	width: 90%;
+  }
+  .inputs input{
+	flex-grow: 1;
+	color: #bfd2ff;
+	font-size: 1.8rem;
+	line-height: 2.4rem;
+	vertical-align: middle;
+	background: transparent;
+  }
+  
+  
+  @keyframes gradient {
+	0% {
+	  background-position: 0 0;
+	}
+	100% {
+	  background-position: 100% 0;
+	}
+  }
+  
+  input:focus, textarea:focus, select:focus{
+	outline: none;
+  }
+  
+  /* ?payment button */
+  .paymentbutton{
+	background: linear-gradient(
+	  to right,
+	  #b294ff,
+	  #57e6e6,
+	  #feffb8,
+	  #57e6e6,
+	  #b294ff,
+	  #57e6e6
+	);
+   background-size: 400% 400%;
+   animation: gradient 5s ease infinite;
+  }
+
 /* ?Donation Page */
 .donowrapper{
 	position: absolute;
@@ -81,7 +154,7 @@
   .paymentmenu {
 	
   }
-  
+
 /* ?Cliped background text */
 .bgclip{
 	background-image: linear-gradient(45deg, #e82d3b, #ee7752, #fda851);

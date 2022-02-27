@@ -3,7 +3,7 @@ import transactionContext from "./transactionCntxt";
 import Web3 from 'web3'
 import detectEthereumProvider from "@metamask/detect-provider";
 import { abi } from "../abi";
-import { allowedNodeEnvironmentFlags } from "process";
+
 
 
 const ContractAddress = "0x71714bAcfDc83A93A96f5113A705E8a934CC161e";
@@ -102,22 +102,24 @@ const TransactionState = (props) => {
   
   const reloadEffect = () => shouldReload(!reload);
 
-  const setAccountListener = (provider) => {
-    provider.on("accountsChanged", (accounts) => setCurrentAccount(accounts[0]));
+  const setAccountListener = async (provider) => {
+    const wait = await provider.on("accountsChanged", (accounts) => setCurrentAccount(accounts[0]));
     console.log(currentAccount);
   };
-  const connectWallet = () => {
-    const loadProvider = async () => {
-      const provider = await detectEthereumProvider();
-      // const contract = await loadContract("Funder", provider);
-      if (provider) {
-        setAccountListener(provider);
-        provider.request({ method: "eth_requestAccounts" });
-       
-      } else {
-        console.error("Please install MetaMask!");
-      }
-    }};
+ 
+     
+  const connectWallet = async () => {
+    const provider = await detectEthereumProvider();
+    // const contract = await loadContract("Funder", provider);
+    if (provider) {
+      setAccountListener(provider);
+      provider.request({ method: "eth_requestAccounts" });
+     
+    } else {
+      console.error("Please install MetaMask!");
+    }
+}
+
 
 
 
@@ -128,8 +130,9 @@ const TransactionState = (props) => {
   useEffect(() => {
     fetchdonations();
     fetchCauses();
-    console.log(currentAccount)
   }, []);
+
+  
 
   return (
     <transactionContext.Provider
