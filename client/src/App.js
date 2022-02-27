@@ -1,6 +1,7 @@
 import React  from 'react';
 import './App.css';
 import './Form.css';
+import Main from './Components/Main'
 import Contact from './Components/ContactUs'
 
 import Header from './Components/Header';
