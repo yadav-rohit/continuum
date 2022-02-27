@@ -17,7 +17,7 @@ const style = {
 
 const Dpage =  () => {
   const context = useContext(transactionContext);
-  const {Addtransaction ,currentAccount, payableContract , payableContractHash ,transferFund , setDNamount} = context;
+  const {Addtransaction ,currentAccount, payableContract , payableContractHash ,pay , setDNamount} = context;
   const [info , setinfo] = useState({Name: "" , Amount: ""});
 //! animation function
   const onchange = async (e) =>{
@@ -31,6 +31,7 @@ const Dpage =  () => {
     // Addtransaction(info.Name , currentAccount , payableContractHash , payableContract , info.Amount)
     // Addtransaction(info.Name , "44154413218646515145" , payableContractHash , payableContract , info.Amount)
     setinfo({Name: "" , Amount: ""});
+    pay();
   }
 
   return (

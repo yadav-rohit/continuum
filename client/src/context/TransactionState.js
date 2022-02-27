@@ -2,7 +2,18 @@ import React, { useState, useEffect } from "react";
 import transactionContext from "./transactionCntxt";
 import Web3 from 'web3'
 import detectEthereumProvider from "@metamask/detect-provider";
-// import { loadContract } from '../Utils/load-contract';
+import { abi } from "../abi";
+import { allowedNodeEnvironmentFlags } from "process";
+
+
+const ContractAddress = "0x71714bAcfDc83A93A96f5113A705E8a934CC161e";
+
+const ContractInstance = new Web3.eth.Contract(
+  abi,
+  ContractAddress
+);
+const provider = await detectEthereumProvider();
+
 
 
 const TransactionState = (props) => {
@@ -18,13 +29,25 @@ const TransactionState = (props) => {
   const [reload, shouldReload] = useState(false);
   const [DNAmount, setDNamount] = useState(false);
 
-  const [web3Api, setWeb3Api] = useState({
-    provider: null,
-    web3: null,
-    contract: null,
-  });
+  // const [web3Api, setWeb3Api] = useState({
+  //   provider: null,
+  //   web3: null,
+  //   contract: null,
+  // });
+
+  const web3 = new Web3(provider);
 
   //?
+
+  const pay = async() => {
+     await ContractInstance.getFunds({
+       from: currentAccount,
+       value: web3.utils.toWei({DNAmount},"ether"),
+       
+     });
+
+  } 
+
 
 
   // ?fetch causes
@@ -90,25 +113,13 @@ const TransactionState = (props) => {
       if (provider) {
         setAccountListener(provider);
         provider.request({ method: "eth_requestAccounts" });
-        setWeb3Api({
-          web3: new Web3(provider),
-          provider,
-          // contract,
-        });
+       
       } else {
         console.error("Please install MetaMask!");
       }
     }};
 
-//? transfer funds
-const transferFund = async () => {
-  const { web3, contract } = web3Api;
-  await contract.getFunds({
-    from: currentAccount,
-    value: web3.utils.toWei({DNAmount}, "ether"),
-  });
-  reloadEffect();
-};
+
 
 
   // const disconnectWallet = () => {
@@ -137,7 +148,7 @@ const transferFund = async () => {
          Addtransaction ,
          payableContract, setpayableContract ,
          setDNamount,
-         transferFund,
+         pay,
       }}
     >
       {props.children}
