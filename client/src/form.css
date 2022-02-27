@@ -1,0 +1,97 @@
+.contactheading {
+    position: relative;
+    text-align: center;
+    /* font-size: 2.5rem; */
+  }
+  
+  .reg {
+    position: relative;
+    display: flex;
+    /* border: 2px solid red; */
+    height: 73vh;
+    width: 45vw;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .contactusinfo {
+    width: 175%;
+    height: 52%;
+    /* margin: 10%; */
+    /* position: absolute; */
+    background-color: black;
+    color: white;
+    border: none;
+    font-weight: 700;
+    outline: none;
+    border-bottom: 2px solid white;
+    transition: .4s all;
+  }
+  
+  .contactusinfo:focus{
+    width: 190%;
+    height: 65%;
+  }
+  
+  .contactusinfo2 {
+    width: 175%;
+    height: 52%;
+    background-color: black;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: .4s all;
+  }
+  
+  .contactusinfo2:hover{
+    background-color: white;
+    color: black;
+  }
+  
+  .inputPara {
+    position: relative;
+    width: 20%;
+    height: 10%;
+    margin: auto 15%;
+    /* border: 2px solid; */
+    font-size: 1.4rem;
+    font-weight: 550;
+  }
+  
+  #sub {
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    /* border: 2px solid green; */
+    /* background-color: rebeccapurple; */
+    background-image: linear-gradient(90deg, #e82d3b, #fda851);
+    width: 46%;
+    height: 8%;
+    border-radius: 100px;
+  }
+  
+  .contactusinfo3 {
+    position: relative;
+    width: 97%;
+    height: 94%;
+    margin: 0.5% 1% 0.5% 1.5%;
+    /* background-color: black; */
+    background-image: linear-gradient(90deg, black, black);
+    border: 0;
+    border-radius: 100px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: .6s all;
+  }
+  
+  .contactusinfo3:hover {
+    background-image: linear-gradient(90deg, #e82d3b, #fda851);
+  }
+  
+  .contact {
+    text-align: center;
+    margin-bottom: 3%;
+    margin-top: 2%;
+  }
+  
+  
