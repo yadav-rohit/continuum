@@ -1,0 +1,57 @@
+.TeamCard{
+    /* padding: 60px 30px; */
+    /* margin: 20px; */
+    background: #151515;
+    border-radius: 20px;
+ }
+ .TeamCard:hover
+ {
+   box-shadow: 0.6em 0.6em 1.2em rgb(93, 93, 238),
+               -0.5em -0.5em 1em rgb(243, 61, 61);
+ }
+ .TeamCardcontent{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+ }
+ .TeamCardcontent .links{
+     color: #6c758f;
+     margin-top: 20px;
+ }
+ .TeamCardcontent .links a{
+     text-decoration: none;
+     color: #6c758f;
+     font-size: 30px;
+     margin: 10px;
+     transition: color 0.4s;
+ }
+ .TeamCardcontent .links a:hover{
+     color: #0196e3;
+ }
+ .js-tilt-glare
+ {
+   border-radius: 20px;
+ }
+ 
+ .TeamCardimgBx{
+     width: 180px;
+     /* height: 250px; */
+     /* border-radius: 50%; */
+     position: relative;
+     margin-bottom: 20px;
+     /* overflow: hidden; */
+ }
+ .TeamCardcontentBx h4{
+     color: #5902EC;
+     font-size: 1.7rem;
+     font-weight: bold;
+     text-align: center;
+     letter-spacing: 1px;
+ }
+ .TeamCardcontentBx h5{
+     color: #6c758f;
+     font-size: 1.2rem;
+     font-weight: bold;
+     text-align: center;
+ }

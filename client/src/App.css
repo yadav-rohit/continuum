@@ -2,6 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ZEN MODDERS HEADER animation */
+.container
+{
+  display: block;
+  text-align: center;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  width: fit-content;
+
+}
+.container1
+{
+  display: block;
+}
+.container span
+{
+  display: block;
+}
+.text1
+{
+  font-size: 2rem;
+  font-family: 'Cormorant', serif;
+  font-weight: 900;
+  /* margin-bottom: 5px; */
+  letter-spacing: 8px;
+  position: relative;
+  animation: text 2.5s 1;
+  color: #ffffff;
+  background-color: rgb(0, 0, 0);
+}
+.text2
+{
+  font-size: 1rem;
+  font-family: 'Cormorant', serif;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+@keyframes text
+{
+   0%
+   {
+     color: black;
+     margin-bottom: -1.2rem;
+   }
+   30%
+   {
+     letter-spacing: 25px;
+      margin-bottom: -1.2rem;
+   }
+   85%
+   {
+     letter-spacing: 8px;
+      margin-bottom: -1.2rem;
+   }
+}
+
+
+/* ?Donation Page */
+.donowrapper{
+	position: absolute;
+	
+	width: 100%;
+	height: 100vh;
+	z-index: 5;
+	background-color: rgb(0, 0, 0);
+  }
+  
+  /* ?PayArea Code */
+  .payArea{
+	background-color: rgb(0, 0, 0);
+  }
+  
+  /* ?paymentmenu properties */
+  .paymentmenu {
+	
+  }
+  
+/* ?Cliped background text */
+.bgclip{
+	background-image: linear-gradient(45deg, #e82d3b, #ee7752, #fda851);
+	background-size: 200% 200%;
+	/* animation: gradient 5s ease infinite; */
+	background-clip: text;
+   -webkit-background-clip: text;
+   color: transparent;
+   
+  }
+
+  
+
 /* ? cause card */
 /* ?donation card */
 .cardview{

@@ -81,9 +81,10 @@ const TransactionState = (props) => {
 
   const setAccountListener = (provider) => {
     provider.on("accountsChanged", (accounts) => setCurrentAccount(accounts[0]));
+    console.log(currentAccount);
   };
-   
-  const connectWallet = async () => {
+  const connectWallet = () => {
+    const loadProvider = async () => {
       const provider = await detectEthereumProvider();
       // const contract = await loadContract("Funder", provider);
       if (provider) {
@@ -97,7 +98,7 @@ const TransactionState = (props) => {
       } else {
         console.error("Please install MetaMask!");
       }
-}
+    }};
 
 //? transfer funds
 const transferFund = async () => {
@@ -116,6 +117,7 @@ const transferFund = async () => {
   useEffect(() => {
     fetchdonations();
     fetchCauses();
+    console.log(currentAccount)
   }, []);
 
   return (

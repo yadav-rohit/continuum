@@ -19,13 +19,11 @@ const style = {
 
 function Header() {
     const context  = useContext(transactionContext);
-  const { hello , connectWallet , currentAccount , disconnectWallet} = context;
+  const { connectWallet , currentAccount } = context;
   const [user, setUserName] = useState();
     const handlewalletclick = () =>{
-        if(currentAccount){
-         disconnectWallet();
-        }
         connectWallet();
+        console.log(currentAccount);
     }
     useEffect(() => {
         if (currentAccount) {
@@ -42,7 +40,7 @@ function Header() {
   return (
     <div className={style.Navbar}>
         <div className={style.navlogo}>
-            Helpers
+            Continuum
             {/* just kept logo for refrence */}
              {/* <img  src={logo} alt="Logo" height={70} width={70} /> */}
         </div>
