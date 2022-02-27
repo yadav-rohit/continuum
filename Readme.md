@@ -10,6 +10,10 @@
   </a>
 
   <h3 align="center">Continuum</h3>
+  
+  <p align="center">
+    It's not about donating but it is about creating a difference!
+  </p>
 
 
 <!-- ABOUT THE PROJECT -->
