@@ -45,7 +45,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   https://github.com/yadav-rohit/continuum.git
    ```
 2. Install NPM packages
    ```sh
@@ -68,9 +68,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Rohit - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Rohit - [@yadav_rohit_26](https://twitter.com/yadav_rohit_26) - email@example.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/yadav-rohit/continuum.git](https://github.com/yadav-rohit/continuum.git)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
