@@ -17,10 +17,8 @@
   </p>
   
   <p align="center">
-    now Live! on 
-    ```sh
+    Now Live! on 
    https://yadav-rohit.github.io/continuumpreview/
-   ```
   </p>
 
 
