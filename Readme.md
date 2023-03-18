@@ -7,7 +7,7 @@
 <div align="left">
   <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://cdn.discordapp.com/attachments/577128047740977162/1086526549949435904/AIO.png" alt="Logo" width="100" height="80">
+    <img src="https://cdn.discordapp.com/attachments/577128047740977162/1086526549949435904/AIO.png" alt="Logo" width="120" height="80">
   </a>
   </div>
   <h3 align="center">Continuum</h3>
