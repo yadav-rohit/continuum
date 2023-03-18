@@ -16,10 +16,10 @@
     It's not about donating but it is about creating a difference!
   </p>
   
-  <p align="center">
+<!--   <p align="center">
     Now Live! on 
    https://yadav-rohit.github.io/continuumpreview/
-  </p>
+  </p> -->
 
 
 <!-- ABOUT THE PROJECT -->
