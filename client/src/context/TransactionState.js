@@ -4,7 +4,8 @@ import Web3 from 'web3'
 import detectEthereumProvider from "@metamask/detect-provider";
 import { abi } from "../abi";
 import Web3Modal from 'web3modal'
-import { ethers } from 'ethers'
+// import { ethers } from 'ethers'
+const ethers = require("ethers")
 
 // const provider =  detectEthereumProvider();
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import './Form.css';
+import './form.css';
 import './team.css';
-import Main from './Components/Main'
+import Main from './Components/main'
 import Contact from './Components/ContactUs'
 import HelpsSection from './Components/HelpsSection';
 import Dpage from './Components/Dpage';

@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/yadav-rohit/continuum#readme",
   "dependencies": {
-    "@truffle/hdwallet-provider": "^2.0.3",
-    "create-react-app": "^5.0.0"
+    "@truffle/hdwallet-provider": "^2.1.15",
+    "create-react-app": "^5.0.1"
   }
 }
